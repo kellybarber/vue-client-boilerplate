@@ -5,10 +5,14 @@ const devMode = process.env.NODE_ENV === 'development'
 
 module.exports = {
   entry: './src/index.js',
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
   module: {
     rules: [
       { 
-        use: ['babel-loader'], 
+        use: [ 'babel-loader' ], 
         test: /\.js$/, 
         exclude: /node_modules/ 
       },
@@ -21,7 +25,6 @@ module.exports = {
         test: /\.scss$/ }
     ]
   },
-  resolve: { extensions: [ '*', '.js', 'css', 'scss' ] },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
@@ -31,10 +34,7 @@ module.exports = {
       filename: 'style.css'
     })
   ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
-  },
+  resolve: { extensions: [ '*', '.js', '.css', '.scss' ] },
   devServer: {
     contentBase: './dist',
     port: 3001
