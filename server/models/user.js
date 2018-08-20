@@ -17,7 +17,7 @@ UserSchema.pre('save', function(next) {
           next()
         })
         .catch(error => {
-          console.log('Hash Error', error)
+          console.log('Password Hash Error', error)
           next()
         }) 
 })

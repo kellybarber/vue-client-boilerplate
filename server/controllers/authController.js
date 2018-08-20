@@ -1,6 +1,11 @@
 const db  = require('../models')
 const jwt = require('jsonwebtoken')
 
+const generateToken = user => {
+  const timestamp = new Date().getTime()
+  return jwt.encode({ sub: user.id, iat: timestamp }, process.env.SECRET_KEY)
+}
+
 exports.login = async (req, res) => {
   try {
     const { userData: { email, password } } = req.body
