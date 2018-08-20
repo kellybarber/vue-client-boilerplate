@@ -1,12 +1,13 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const devMode = process.env.NODE_ENV === 'development'
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '../dist'),
     filename: 'bundle.js'
   },
   module: {
@@ -32,11 +33,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css'
-    })
+    }),
+    new CleanWebpackPlugin(['dist'])
   ],
   resolve: { extensions: [ '*', '.js', '.css', '.scss' ] },
-  devServer: {
-    contentBase: './dist',
-    port: 3001
-  }
-};
+}
