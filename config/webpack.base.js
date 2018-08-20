@@ -1,8 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const devMode = process.env.NODE_ENV === 'development'
 
 module.exports = {
   entry: './src/index.js',
@@ -16,25 +14,18 @@ module.exports = {
         use: [ 'babel-loader' ], 
         test: /\.js$/, 
         exclude: /node_modules/ 
-      },
-      { 
-        use: [ 
-          devMode ? MiniCssExtractPlugin.loader : 'style-loader', 
-          'css-loader', 
-          'sass-loader' 
-        ], 
-        test: /\.scss$/ }
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './src/assets/index.html',
       filename: './index.html'
     }),
-    new MiniCssExtractPlugin({
-      filename: 'style.css'
-    }),
-    new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin(
+      ['dist'], 
+      { root: path.resolve(__dirname, '..') }
+    )
   ],
   resolve: { extensions: [ '*', '.js', '.css', '.scss' ] },
 }
