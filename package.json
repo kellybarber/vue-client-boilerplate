@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js --hot --mode development",
+    "start:prod": "node server/index.js",
     "build": "webpack --config config/webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kelly Barber",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },
