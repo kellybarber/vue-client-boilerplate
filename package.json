@@ -4,7 +4,7 @@
   "description": "A simple react boilerplate with babel and webpack",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.dev.js --hot --mode development",
+    "start": "webpack-dev-server --config config/webpack.dev.js --hot",
     "start:prod": "node server/index.js",
     "build": "webpack --config config/webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,12 @@
     "express": "^4.16.3",
     "nodemon": "^1.18.3",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

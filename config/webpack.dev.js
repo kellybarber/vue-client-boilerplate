@@ -1,9 +1,10 @@
+const path = require('path')
 const merge = require('webpack-merge')
 const base = require('./webpack.base')
 
 module.exports = merge(base, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   module: {
     rules: [
       { 
@@ -17,7 +18,7 @@ module.exports = merge(base, {
     ]
   },
   devServer: {
-    contentBase: '../dist',
+    contentBase: path.join(__dirname, '../dist'),
     port: 3002
   }
 })
