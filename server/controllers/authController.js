@@ -2,8 +2,7 @@ const db  = require('../models')
 const jwt = require('jsonwebtoken')
 
 const generateToken = user => {
-  const timestamp = new Date().getTime()
-  return jwt.encode({ sub: user.id, iat: timestamp }, process.env.SECRET_KEY)
+  return jwt.sign({ sub: user.id }, process.env.SECRET_KEY)
 }
 
 exports.login = async (req, res) => {
@@ -21,15 +20,19 @@ exports.register = async (req, res) => {
   try {
     const { userData: { email, password } } = req.body
 
-    const user = await db.User.create({ email, password })
+    if (!email || !password) {
+      return res.status(422).send({ error: 'You must provide an email and password' })
+    }
 
-    const token = await jwt.sign({ userId: user._id }, process.env.SECRET_KEY)
+    const user  = await db.User.create({ email, password })
+    const token = generateToken(user)
 
-    console.log('TOKEN', token)
-
-    res.send({ register: 'register' })
+    res.send({ token })
     
   } catch (error) {
+    if (error.code === 11000) {
+      res.status(422).send({ error: 'This user already exists' })
+    }
     console.log('Registration Error: ', error)
   }
 }
