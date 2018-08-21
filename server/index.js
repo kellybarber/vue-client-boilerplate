@@ -2,15 +2,18 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const bodyParser = require("body-parser")
+const cors = require('cors')
 const port = process.env.PORT || 8080
 const publicPath = path.join(__dirname, '..', 'dist')
+require("dotenv").config()
 
 const authRoutes = require('./routes/authRoutes')
 
 app.use(bodyParser.json());
+app.use(cors())
 app.use(express.static(publicPath))
 
-app.use('/auth', authRoutes)
+app.use('/api/auth', authRoutes)
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'))

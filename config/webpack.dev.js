@@ -16,6 +16,7 @@ module.exports = merge(base, {
   devServer: {
     contentBase: path.join(__dirname, '../dist'),
     historyApiFallback: true,
-    port: 3000
+    port: 3000,
+    proxy: { '/api': 'http://localhost:8080' }
   }
 })
