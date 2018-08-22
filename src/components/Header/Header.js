@@ -18,6 +18,7 @@ class Header extends Component {
 
   authenticatedHeader = () => (
     <div>
+      <Link to='/dashboard'>Dashboard</Link>
       {this.logoutButton()}
     </div>
   )
