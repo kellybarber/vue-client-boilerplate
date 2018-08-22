@@ -1,6 +1,7 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Switch } from 'react-router-dom'
 import PrivateRoute from '../helpers/PrivateRoute'
+import PublicRoute from '../helpers/PublicRoute'
 import Header from '../components/Header/Header'
 import Login from '../components/Login/Login'
 import Register from '../components/Register/Register'
@@ -11,8 +12,8 @@ export default () => (
     <div className='app-container'>
       <Header/>
       <Switch>
-        <Route path='/login' component={Login}/>
-        <Route path='/register' component={Register}/>
+        <PublicRoute path='/login' component={Login}/>
+        <PublicRoute path='/register' component={Register}/>
         <PrivateRoute path='/dashboard' component={Dashboard}/>
       </Switch>
     </div>
