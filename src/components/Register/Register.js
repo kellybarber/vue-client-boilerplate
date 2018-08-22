@@ -22,6 +22,7 @@ class Register extends Component {
 
   render() {
     const { email, password } = this.state
+    const { errorMessage } = this.props
 
     return (
       <div className='entry__container'>
@@ -42,9 +43,12 @@ class Register extends Component {
           />
           <button>Register</button>
         </form>
+        <div>{errorMessage}</div>
       </div>
     )
   }
 }
 
-export default connect(null, { startRegisterUser })(Register)
+const mapStateToProps = ({ auth: { authenticated }}) => ({ authenticated })
+
+export default connect(mapStateToProps, { startRegisterUser })(Register)

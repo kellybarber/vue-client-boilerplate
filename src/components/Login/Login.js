@@ -22,6 +22,7 @@ class Login extends Component {
 
   render() {
     const { email, password } = this.state
+    const { errorMessage } = this.props
 
     return (
       <div className='entry__container'>
@@ -42,9 +43,12 @@ class Login extends Component {
           />
           <button>Login</button>
         </form>
+        <div>{errorMessage}</div>
       </div>
     )
   }
 }
 
-export default connect(null, { startLoginUser })(Login)
+const mapStateToProps = ({ auth: { errorMessage }}) => ({ errorMessage })
+
+export default connect(mapStateToProps, { startLoginUser })(Login)

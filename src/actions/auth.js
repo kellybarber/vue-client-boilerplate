@@ -37,6 +37,7 @@ export const startLoginUser = userData => (
       const { token } = await authRequest('/api/auth/login', userData)
 
       dispatch(authUser(token))
+      dispatch(authError(null))
       setUser(token)
 
     } catch ({ error }) {
@@ -52,6 +53,7 @@ export const startRegisterUser = userData => (
       const { token } = await authRequest('/api/auth/register', userData)
 
       dispatch(authUser(token))
+      dispatch(authError(null))
       setUser(token)
 
     } catch ({ error }) {
