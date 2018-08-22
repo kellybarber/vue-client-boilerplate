@@ -16,14 +16,14 @@ class Header extends Component {
     )
   }
 
-  authenticatedHeader = () => (
+  authenticated = () => (
     <div>
       <Link to='/dashboard'>Dashboard</Link>
       {this.logoutButton()}
     </div>
   )
 
-  notAuthenticatedHeader = () => (
+  notAuthenticated = () => (
     <div>
       <Link to='/register'>Sign Up</Link>
       <Link to='/login'>Sign In</Link>
@@ -33,7 +33,7 @@ class Header extends Component {
   render() {
     const { authenticated } = this.props
 
-    return authenticated ? this.authenticatedHeader() : this.notAuthenticatedHeader()
+    return authenticated ? this.authenticated() : this.notAuthenticated()
   }
 }
 

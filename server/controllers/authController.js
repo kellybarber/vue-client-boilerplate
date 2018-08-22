@@ -9,9 +9,20 @@ exports.login = async (req, res) => {
   try {
     const { userData: { email, password } } = req.body
 
-    res.send({ login: 'login' })
+    if (!email || !password) throw 'You must provide an email and password'
+
+    const user = await db.User.findOne({ email })
+    if (!user) throw 'No user with specified email exists'
+
+    const verified = await user.comparePassword(password)
+    if (!verified) throw 'Your password is incorrect'
+
+    const token = generateToken(user)
+
+    res.send({ token })
 
   } catch (error) {
+    res.status(422).send({ error })
     console.log('Login Error: ', error)
   }
 }
@@ -20,9 +31,7 @@ exports.register = async (req, res) => {
   try {
     const { userData: { email, password } } = req.body
 
-    if (!email || !password) {
-      return res.status(422).send({ error: 'You must provide an email and password' })
-    }
+    if (!email || !password) throw 'You must provide an email and password'
 
     const user  = await db.User.create({ email, password })
     const token = generateToken(user)
@@ -30,9 +39,8 @@ exports.register = async (req, res) => {
     res.send({ token })
     
   } catch (error) {
-    if (error.code === 11000) {
-      res.status(422).send({ error: 'This user already exists' })
-    }
+    if (error.code === 11000) error = 'This user already exists' 
+    res.status(422).send({ error })
     console.log('Registration Error: ', error)
   }
 }

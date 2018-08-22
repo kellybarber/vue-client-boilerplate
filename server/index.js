@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const bodyParser = require("body-parser")
+const bodyParser = require('body-parser')
 const cors = require('cors')
 const port = process.env.PORT || 8080
 const publicPath = path.join(__dirname, '..', 'dist')
-require("dotenv").config()
+require('dotenv').config()
 
 const authRoutes = require('./routes/authRoutes')
 

@@ -41,7 +41,7 @@ export const startLoginUser = userData => (
 
     } catch ({ error }) {
       dispatch(authError(error))
-      console.log('Login Error', error)
+      console.log('Login Error: ', error)
     }
   }
 )
@@ -56,7 +56,7 @@ export const startRegisterUser = userData => (
 
     } catch ({ error }) {
       dispatch(authError(error))
-      console.log('Registration Error', error)
+      console.log('Registration Error: ', error)
     }
   }
 )
