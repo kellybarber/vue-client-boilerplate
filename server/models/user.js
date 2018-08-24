@@ -7,25 +7,27 @@ const UserSchema = new mongoose.Schema ({
   password:   { type: String }
 })
 
-UserSchema.pre('save', function(next) {
-  if (!this.isModified('password')) return next()
+UserSchema.pre('save', async function(next) {
+  try {
+    if (!this.isModified('password')) return next()
 
-  bcrypt.hash(this.password, saltRounds)
-        .then(hashedPassword => {
-          this.password = hashedPassword
-          next()
-        })
-        .catch(error => {
-          console.log('Password Hash Error', error)
-          next()
-        }) 
+    const hashedPassword = await bcrypt.hash(this.password, saltRounds)
+
+    this.password = hashedPassword
+    next()
+
+  } catch (error) {
+    console.log('Password Hash Error', error)
+    next()
+  }
 })
 
 UserSchema.methods.comparePassword = function(password) {
-  return bcrypt.compare(password, this.password)
-               .catch(error => {
-                 throw error
-               })
+  try {
+    return bcrypt.compare(password, this.password)
+  } catch (error) {
+    throw error
+  }
 }
 
 module.exports = mongoose.model('User', UserSchema)
