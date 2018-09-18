@@ -12,6 +12,7 @@
   "author": "Kelly Barber",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-react-css-modules": "^3.4.2",
     "babel-polyfill": "^6.26.0",
     "express": "^4.16.3",
     "react": "^16.4.2",
