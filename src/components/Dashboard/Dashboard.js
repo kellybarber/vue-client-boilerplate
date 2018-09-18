@@ -1,7 +1,9 @@
 import React from 'react'
+import Header from '../Header/Header'
 
 export default () => (
   <div>
-    This is a protected route
+    <Header/>
+    This is the dashboard
   </div>
 )
