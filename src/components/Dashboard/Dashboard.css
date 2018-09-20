@@ -1,5 +1,5 @@
 .background {
+  /* position: absolute; */
   height: 100vh;
-
   background-color: var(--color-primary);
 }
