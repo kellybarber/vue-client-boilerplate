@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
 import setupMiddleware from './helpers/setupMiddleware'
+import './styles/main.css'
 
 import Dashboard from './components/Dashboard/Dashboard'
 
