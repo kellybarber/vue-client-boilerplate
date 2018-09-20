@@ -9,7 +9,10 @@ export const getRepositories = () => (
       const response = await fetch(URL, {
         method: 'POST',
         headers: AUTH,
-        body: JSON.stringify({ query: getReposQuery })
+        body: JSON.stringify({ 
+          query: getReposQuery,
+          variables: { "organization": "shopify" } 
+        })
       })
 
       const data = await response.json()
