@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+}
+
+.input {
+  flex: 1;
+
+  margin-right: 2rem;
+  padding-left: 1rem; 
+
+  font-size: 1.4rem;
+  font-weight: 200;
+}
+
+.button {
+  height: 3.4rem;
+  width: 10rem;
+
+  font-size: 1.4rem;
+  font-weight: 200;
+
+  border: none;
+  border-radius: 2px;
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+
+  cursor: pointer;
+}

@@ -1,29 +1,17 @@
-.form {
+.container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   display: flex;
-  margin-bottom: 3rem;
-}
+  flex-direction: column;
+  justify-content: center;
+  
+  max-width: 60rem;
 
-.input {
-  flex: 1;
+  padding: 2rem;
 
-  margin-right: 2rem;
-  padding-left: 1rem; 
-
-  font-size: 1.4rem;
-  font-weight: 200;
-}
-
-.button {
-  height: 3.4rem;
-  width: 10rem;
-
-  font-size: 1.4rem;
-  font-weight: 200;
-
-  border: none;
+  background-color: #fff;
   border-radius: 2px;
-  color: var(--color-white);
-  background-color: var(--color-secondary);
-
-  cursor: pointer;
 }

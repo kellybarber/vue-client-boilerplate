@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from '../Header/Header'
-import RepoContainer from '../RepoContainer/RepoContainer'
+import RepoSearch from '../RepoSearch/RepoSearch'
 import { background } from './Dashboard.css'
 
 export default () => (
   <div className={background}>
-    <RepoContainer/>
+    <RepoSearch/>
   </div>
 )
