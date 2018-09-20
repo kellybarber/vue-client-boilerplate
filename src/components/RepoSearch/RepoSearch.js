@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getRepositories } from '../../actions'
+import { getRepositories, clearRepositories } from '../../actions'
 import { container } from './RepoSearch.css'
 
 import RepoSearchForm from '../RepoSearchForm/RepoSearchForm'
@@ -12,26 +12,25 @@ class RepoSearch extends Component {
   onSearchChange = e => {
     const searchTerm = e.target.value
     this.setState({ searchTerm })
+
+    if (searchTerm === '') this.props.clearRepositories()  
   }
 
   onSubmit = e => {
     e.preventDefault()
-    const { searchTerm } = this.state
-    const { getRepositories } = this.props
-    
-    getRepositories(searchTerm)
+    this.props.getRepositories(this.state.searchTerm)
   }
  
   render() {
     const { searchTerm } = this.state
-
+    
     return (
       <div className={container}>
         <RepoSearchForm searchTerm={searchTerm} onSearchChange={this.onSearchChange} onSubmit={this.onSubmit}/>
-        <RepoSearchList/>
+        <RepoSearchList searchTerm={searchTerm}/>
       </div>
     )
   }
 }
 
-export default connect(null, { getRepositories })(RepoSearch)
+export default connect(null, { getRepositories, clearRepositories })(RepoSearch)

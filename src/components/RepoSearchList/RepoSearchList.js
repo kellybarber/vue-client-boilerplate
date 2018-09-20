@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-const RepoList = () => {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Language</th>
-          <th>Latest Tag</th>
-        </tr>
-      </thead>
-    </table>
-  )
+class RepoSearchList extends Component {
+  render() {
+    const { repos } = this.props
+    const show = Object.keys(repos)[0] !== undefined
+
+    if (show) {
+      return (
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Language</th>
+              <th>Latest Tag</th>
+            </tr>
+          </thead>
+        </table>
+      )
+    } else {
+      return null
+    } 
+  }
 }
 
-export default RepoList
+const mapStateToProps = ({ repos }) => ({ repos })
+
+export default connect(mapStateToProps)(RepoSearchList)
