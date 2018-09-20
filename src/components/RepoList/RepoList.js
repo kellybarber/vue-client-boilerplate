@@ -2,9 +2,15 @@ import React from 'react'
 
 const RepoList = () => {
   return (
-    <div>
-      This is RepoList
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Language</th>
+          <th>Latest Tag</th>
+        </tr>
+      </thead>
+    </table>
   )
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getRepositories } from '../../actions'
+import { form, input, button } from './RepoSearch.css'
 
 class RepoSearch extends Component {
   state = { searchTerm: '' }
@@ -22,14 +23,15 @@ class RepoSearch extends Component {
     const { searchTerm } = this.state
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form className={form} onSubmit={this.onSubmit}>
         <input 
+          className={input}
           placeholder='Search'
           type='text'
           value={searchTerm}
           onChange={this.onSearchChange}
         />
-        <button>Search</button>
+        <button className={button}>Search</button>
       </form>
     )
   }

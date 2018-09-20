@@ -8,8 +8,9 @@
   flex-direction: column;
   justify-content: center;
   
-  min-height: 20rem;
-  width: 20rem;
+  max-width: 60rem;
+
+  padding: 2rem;
 
   background-color: #fff;
   border-radius: 2px;
