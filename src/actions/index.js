@@ -18,7 +18,7 @@ export const getRepositories = searchTerm => (
         headers: AUTH,
         body: JSON.stringify({ 
           query: getReposQuery,
-          variables: { "organization": "shopify" } 
+          variables: { "organization": searchTerm } 
         })
       })
 

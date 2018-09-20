@@ -21,7 +21,8 @@ export const normalizeReposData = ({ data }) => {
       name, 
       url, 
       language, 
-      release 
+      release,
+      favourite: false 
     }
 
     normalizedData.repositories.push(repositoryData)
