@@ -1,33 +1,7 @@
+import { getReposQuery } from '../queries'
 
 const URL = 'https://api.github.com/graphql'
-const AUTH = { Authorization: `bearer 4a9c4d91c5aeeceb8683fa95bb6d0b59efc15b02` }
-
-const QUERY = `{
-  organization(login: "shopify") {
-    name
-    url
-    repositories(first: 10) {
-      edges {
-        node {
-          nameWithOwner
-          url
-          primaryLanguage {
-            name
-          }
-          releases(last: 1) {
-          	edges {
-              node {
-                tag {
-                  name
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}`
+const AUTH = { Authorization: `bearer ${process.env.GITHUB_TOKEN}` }
 
 export const getRepositories = () => (
   async dispatch => {
@@ -35,7 +9,7 @@ export const getRepositories = () => (
       const response = await fetch(URL, {
         method: 'POST',
         headers: AUTH,
-        body: JSON.stringify({ query: QUERY })
+        body: JSON.stringify({ query: getReposQuery })
       })
 
       const data = await response.json()
