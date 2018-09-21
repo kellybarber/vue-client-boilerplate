@@ -1,29 +1,31 @@
-.menuShow {
+.menu {
   position: fixed;
   top: 0;
   right: 0;
 
   height: 100%;
   width: 40rem;
+  z-index: 100;
+
+  padding: 15rem 4rem;
+  box-sizing: content-box;
 
   background-color: var(--color-white);
+}
+
+.menuShow {
+
 
   animation: slideIn 1s;
 }
 
 .menuHide {
-  position: fixed;
-  top: 0;
-  right: 0;
-
-  height: 100%;
-  width: 40rem;
-
-  background-color: var(--color-white);
+ 
   opacity: 0;
+  visibility: hidden;
   
   animation: slideOut 1s;
-  transition: opacity 0s 1s;
+  transition: all 0s 1s;
 }
 
 @keyframes slideIn {

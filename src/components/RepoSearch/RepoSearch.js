@@ -4,7 +4,7 @@ import { getRepositories, clearRepositories } from '../../actions'
 import { container } from './RepoSearch.css'
 
 import RepoSearchForm from '../RepoSearchForm/RepoSearchForm'
-import RepoSearchList from '../RepoSearchList/RepoSearchList'
+import RepoList from '../RepoSearchList/RepoSearchList'
 
 class RepoSearch extends Component {
   state = { searchTerm: '' }
@@ -27,7 +27,7 @@ class RepoSearch extends Component {
     return (
       <div className={container}>
         <RepoSearchForm searchTerm={searchTerm} onSearchChange={this.onSearchChange} onSubmit={this.onSubmit}/>
-        <RepoSearchList searchTerm={searchTerm}/>
+        <RepoList searchTerm={searchTerm}/>
       </div>
     )
   }

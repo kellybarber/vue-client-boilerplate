@@ -1,8 +1,10 @@
 import React from 'react'
-import { menuShow, menuHide } from './favouritesMenu.css'
+import { menu, menuShow, menuHide } from './favouritesMenu.css'
+
+import FavouritesList from '../FavouritesList/FavouritesList'
 
 export default ({ showMenu }) => (
-  <menu className={showMenu ? menuShow : menuHide}>
-    
+  <menu className={`${showMenu ? menuShow : menuHide} ${menu}`}>
+    <FavouritesList/>
   </menu>
 )

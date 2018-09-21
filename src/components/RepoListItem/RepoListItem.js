@@ -23,9 +23,7 @@ class RepoListItem extends Component {
         <td><a href={url}>{name}</a></td>
         <td>{language}</td>
         <td>{release}</td>
-        <td>
-          <RepoListItemButton favourite={favourite} onFavourite={this.onFavourite}/> 
-        </td>
+        <td><RepoListItemButton favourite={favourite} onFavourite={this.onFavourite}/></td>
       </tr>
     )
   }
