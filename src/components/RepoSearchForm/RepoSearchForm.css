@@ -25,6 +25,20 @@
   border-radius: 2px;
   color: var(--color-white);
   background-color: var(--color-secondary);
-
   cursor: pointer;
+
+  transition: all .2s;
+}
+
+button:hover {
+  outline: none;
+  transform: scale(1.04);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(1.01);
 }

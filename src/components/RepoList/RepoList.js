@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { table, head, title } from './RepoList.css'
+import { table, tableShow, tableHide, head, title } from './RepoList.css'
 
 import RepoListItem from '../RepoListItem/RepoListItem'
  

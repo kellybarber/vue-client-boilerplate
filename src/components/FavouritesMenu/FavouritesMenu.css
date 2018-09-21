@@ -46,7 +46,11 @@
 .menuHideButton:focus {
   outline: none;
   color: var(--color-primary);
-  transform: scale(1.2);
+  transform: scale(1.16);
+}
+
+.menuHideButton:active {
+  transform: scale(1.02);
 }
 
 @keyframes slideIn {
