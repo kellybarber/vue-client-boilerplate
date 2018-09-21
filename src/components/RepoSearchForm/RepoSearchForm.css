@@ -10,6 +10,8 @@
 
   font-size: 1.4rem;
   font-weight: 200;
+
+  outline-color: var(--color-tertiary);
 }
 
 .button {
