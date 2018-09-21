@@ -14,7 +14,7 @@ class FavouritesListItem extends Component {
 
     return (
       <tr className={row}>
-        <td><a className={link} href={url}>{name}</a></td>
+        <td><a className={link} href={url} target='_blank'>{name}</a></td>
         <td>{language}</td>
         <td>{release}</td>
         <td><button className={button} onClick={this.onRemoveFavourite}>Remove</button></td>

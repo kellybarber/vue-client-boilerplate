@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { addFavourite, removeFavourite } from '../../actions'
 import { row, link, button } from './RepoListItem.css'
 
-// import RepoListItemButton from '../RepoListItemButton/RepoListItemButton'
-
 class RepoListItem extends Component {
   onFavourite = () => {
     const { id, name, url, language, release, favourite, addFavourite, removeFavourite } = this.props
@@ -21,10 +19,14 @@ class RepoListItem extends Component {
 
     return (
       <tr className={row}>
-        <td><a className={link} href={url}>{name}</a></td>
+        <td><a className={link} href={url} target='_blank'>{name}</a></td>
         <td>{language}</td>
         <td>{release}</td>
-        <td><button className={button} onClick={this.onFavourite}>{favourite ? 'Remove' : 'Add'}</button></td>
+        <td>
+          <button className={button} onClick={this.onFavourite}>
+            {favourite ? 'Remove' : 'Add'}
+          </button>
+        </td>
       </tr>
     )
   }
