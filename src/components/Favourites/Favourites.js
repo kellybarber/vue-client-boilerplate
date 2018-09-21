@@ -17,7 +17,7 @@ class Favourites extends Component {
     return (
       <div className={favourites}>
         <FavouritesButton onToggleMenu={this.onToggleMenu}/>
-        <FavouritesMenu showMenu={showMenu}/>
+        <FavouritesMenu showMenu={showMenu} onToggleMenu={this.onToggleMenu}/>
       </div>
     )
   }
