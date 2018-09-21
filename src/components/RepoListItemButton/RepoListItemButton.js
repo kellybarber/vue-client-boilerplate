@@ -29,7 +29,7 @@ const RepoListItemButton = ({ favourite, onFavourite }) => {
 
   return (
     <button onClick={onFavourite}>
-      {favourite ? favouritedButton : notFavouritedButton}
+      {favourite ? '-' : '+'}
     </button>
   )
 }

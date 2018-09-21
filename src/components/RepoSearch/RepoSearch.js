@@ -4,7 +4,7 @@ import { getRepositories, clearRepositories } from '../../actions'
 import { container } from './RepoSearch.css'
 
 import RepoSearchForm from '../RepoSearchForm/RepoSearchForm'
-import RepoList from '../RepoSearchList/RepoSearchList'
+import RepoList from '../RepoList/RepoList'
 
 class RepoSearch extends Component {
   state = { searchTerm: '' }
