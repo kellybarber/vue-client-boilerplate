@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { favourites } from './Favourites.css'
+
 import FavouritesButton from '../FavouritesButton/FavouritesButton'
 import FavouritesMenu from '../FavouritesMenu/FavouritesMenu'
 
@@ -10,10 +12,12 @@ class Favourites extends Component {
   }
 
   render() {
+    const { showMenu } = this.state
+
     return (
-      <div>
+      <div className={favourites}>
         <FavouritesButton onToggleMenu={this.onToggleMenu}/>
-        <FavouritesMenu/>
+        <FavouritesMenu showMenu={showMenu}/>
       </div>
     )
   }

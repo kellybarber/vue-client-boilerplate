@@ -1,0 +1,45 @@
+.menuShow {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  height: 100%;
+  width: 40rem;
+
+  background-color: var(--color-white);
+
+  animation: slideIn 1s;
+}
+
+.menuHide {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  height: 100%;
+  width: 40rem;
+
+  background-color: var(--color-white);
+  opacity: 0;
+  
+  animation: slideOut 1s;
+  transition: opacity 0s 1s;
+}
+
+@keyframes slideIn {
+  from {
+    margin-right: -100%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    margin-right: 0%;
+  }
+  to {
+    margin-right: -100%;
+  }
+}
