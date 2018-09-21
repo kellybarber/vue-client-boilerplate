@@ -1,5 +1,5 @@
 import { getReposQuery } from '../queries'
-import { ADD_REPOS, CLEAR_REPOS } from './types'
+import { ADD_REPOS, CLEAR_REPOS, ADD_FAVOURITE, REMOVE_FAVOURITE } from './types'
 import { normalizeReposData } from '../helpers/normalizeResponse'
 
 const URL = 'https://api.github.com/graphql'
@@ -36,4 +36,15 @@ export const getRepositories = searchTerm => (
 
 export const clearRepositories = () => ({
   type: CLEAR_REPOS
+})
+
+
+export const addFavourite = favourite => ({
+  type: ADD_FAVOURITE,
+  payload: favourite
+})
+
+export const removeFavourite = id => ({
+  type: REMOVE_FAVOURITE,
+  payload: id
 })

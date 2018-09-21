@@ -8,17 +8,16 @@ class RepoSearchList extends Component {
   render() {
     const { repos } = this.props
     const show = Object.keys(repos)[0] !== undefined
-    // const show = true
 
     if (show) {
       return (
         <table className={table}>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Language</th>
-              <th>Latest Tag</th>
-              <th>Favourite</th>
+              <td>Name</td>
+              <td>Language</td>
+              <td>Latest Tag</td>
+              <td>Favourite</td>
             </tr>
           </thead>
           <tbody>
