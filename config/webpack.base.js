@@ -28,7 +28,7 @@ module.exports = {
       ['dist'], 
       { root: path.resolve(__dirname, '..') }
     ),
-    new Dotenv()
+    new Dotenv({ path: '../.env' })
   ],
   resolve: { extensions: [ '*', '.js', '.css', '.scss' ] },
 }
