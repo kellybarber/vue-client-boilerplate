@@ -29,5 +29,8 @@ module.exports = merge(base, {
     new MiniCssExtractPlugin({
       filename: 'style.css'
     }),
+    new webpack.DefinePlugin({
+      GITHUB_TOKEN: JSON.stringify(process.env.GITHUB_TOKEN)
+    })
   ]
 })
