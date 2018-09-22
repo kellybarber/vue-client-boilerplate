@@ -10,7 +10,7 @@
   width: 55rem;
   z-index: 150;
 
-  padding: 2rem 4rem;
+  padding: 1rem 1rem 2rem 4rem;
   box-sizing: content-box;
   background-color: var(--color-menu);
 
@@ -31,7 +31,7 @@
 
 .menuHideButton {
   justify-self: flex-start;
-  margin: 0 0 2rem auto;
+  margin: 0 3rem 2rem auto;
 
   font-size: 4rem;
 

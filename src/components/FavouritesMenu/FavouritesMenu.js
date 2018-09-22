@@ -18,7 +18,7 @@ const FavouritesMenu = ({ showMenu, onToggleMenu, hasFavourites }) => (
 )
 
 const mapStateToProps = ({ favourites }) => {
-  const hasFavourites = favourites[1] === undefined ? false : true
+  const hasFavourites = favourites[0] === undefined ? false : true
 
   return({ hasFavourites })
 }
