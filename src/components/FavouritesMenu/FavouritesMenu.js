@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { menu, menuShow, menuHide, menuHideButton } from './favouritesMenu.css'
+import { menu, menuShow, menuHide, menuHideButton } from './FavouritesMenu.css'
 
 import FavouritesList from '../FavouritesList/FavouritesList'
 
