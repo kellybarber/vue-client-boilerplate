@@ -1,9 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const Dotenv = require('dotenv-webpack')
-
-console.log(path.join(__dirname, '../.env'))
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
