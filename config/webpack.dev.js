@@ -23,6 +23,7 @@ module.exports = merge(base, {
       }
     ]
   },
+  plugins: [ new Dotenv() ],
   devServer: {
     contentBase: path.join(__dirname, '../dist'),
     port: 3000,

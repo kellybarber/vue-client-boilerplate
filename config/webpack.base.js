@@ -29,8 +29,7 @@ module.exports = {
     new CleanWebpackPlugin(
       ['dist'], 
       { root: path.resolve(__dirname, '..') }
-    ),
-    new Dotenv({ path: path.join(__dirname, '../.env') })
+    )
   ],
   resolve: { extensions: [ '*', '.js', '.css', '.scss' ] },
 }
