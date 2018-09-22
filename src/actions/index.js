@@ -5,10 +5,6 @@ import { normalizeReposData } from '../helpers/normalizeResponse'
 const URL = 'https://api.github.com/graphql'
 const AUTH = { Authorization: `bearer ${process.env.GITHUB_TOKEN}` }
 
-console.log('PROCESS.ENV: ', process.env)
-console.log('PROCESS.ENV Token: ', process.env.GITHUB_TOKEN)
-
-
 const addRepositories = payload => ({
   type: ADD_REPOS,
   payload
