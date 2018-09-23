@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { table, tableShow, tableHide, head, title } from './RepoList.css'
+import { table, head, title } from './ReposList.css'
 
-import RepoListItem from '../RepoListItem/RepoListItem'
+import ReposListItem from '../ReposListItem/ReposListItem'
  
-class RepoSearchList extends Component {
+class ReposList extends Component {
   render() {
     const { repos } = this.props
     const show = Object.keys(repos)[0] !== undefined
@@ -22,7 +22,7 @@ class RepoSearchList extends Component {
           </thead>
           <tbody>
             {repos.repositories.map(repo => {
-              return <RepoListItem key={repo.id} {...repo}/>
+              return <ReposListItem key={repo.id} {...repo}/>
             })}
           </tbody>
         </table>
@@ -35,4 +35,4 @@ class RepoSearchList extends Component {
 
 const mapStateToProps = ({ repos }) => ({ repos })
 
-export default connect(mapStateToProps)(RepoSearchList)
+export default connect(mapStateToProps)(ReposList)

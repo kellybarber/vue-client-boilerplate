@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getRepositories, clearRepositories } from '../../actions'
-import { container } from './RepoSearch.css'
+import { container } from './Repos.css'
 
-import RepoSearchForm from '../RepoSearchForm/RepoSearchForm'
-import RepoList from '../RepoList/RepoList'
+import ReposSearch from '../ReposSearch/ReposSearch'
+import ReposList from '../ReposList/ReposList'
 
-class RepoSearch extends Component {
+class Repos extends Component {
   state = { searchTerm: '' }
 
   onSearchChange = e => {
@@ -26,11 +26,11 @@ class RepoSearch extends Component {
     
     return (
       <div className={container}>
-        <RepoSearchForm searchTerm={searchTerm} onSearchChange={this.onSearchChange} onSubmit={this.onSubmit}/>
-        <RepoList searchTerm={searchTerm}/>
+        <ReposSearch searchTerm={searchTerm} onSearchChange={this.onSearchChange} onSubmit={this.onSubmit}/>
+        <ReposList searchTerm={searchTerm}/>
       </div>
     )
   }
 }
 
-export default connect(null, { getRepositories, clearRepositories })(RepoSearch)
+export default connect(null, { getRepositories, clearRepositories })(Repos)

@@ -5,13 +5,10 @@
 
 .tableShow {
   opacity: 1;
-
-  /* transition: all .2s; */
 }
 
 .tableHide {
   opacity: 0;
-  /* transition: all .2s; */
 }
 
 .head::after {

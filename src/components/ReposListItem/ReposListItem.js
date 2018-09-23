@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addFavourite, removeFavourite } from '../../actions'
-import { row, link, button } from './RepoListItem.css'
+import { row, link, button } from './ReposListItem.css'
 
-class RepoListItem extends Component {
+class ReposListItem extends Component {
   onFavourite = () => {
     const { id, name, url, language, release, favourite, addFavourite, removeFavourite } = this.props
 
@@ -37,4 +37,4 @@ const mapStateToProps = ({ favourites }, { id }) => {
   return ({ favourite })
 }
 
-export default connect(mapStateToProps, { addFavourite, removeFavourite })(RepoListItem)
+export default connect(mapStateToProps, { addFavourite, removeFavourite })(ReposListItem)

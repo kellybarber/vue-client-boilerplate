@@ -1,7 +1,7 @@
 import React from 'react'
-import { form, input, button } from './RepoSearchForm.css'
+import { form, input, button } from './ReposSearch.css'
 
-const RepoSearchForm = ({ searchTerm, onSearchChange, onSubmit }) => (
+const ReposSearch = ({ searchTerm, onSearchChange, onSubmit }) => (
   <form className={form} onSubmit={onSubmit}>
     <input 
       className={input}
@@ -14,4 +14,4 @@ const RepoSearchForm = ({ searchTerm, onSearchChange, onSubmit }) => (
   </form>
 )
 
-export default RepoSearchForm
+export default ReposSearch
