@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { menu, menuShow, menuHide, menuHideButton } from './FavouritesMenu.css'
+import { menu, menuShow, menuHide, menuHideButton, noFavourites } from './FavouritesMenu.css'
 
 import FavouritesList from '../FavouritesList/FavouritesList'
 
@@ -11,7 +11,7 @@ const FavouritesMenu = ({ showMenu, onToggleMenu, hasFavourites }) => (
     </button>
     {hasFavourites
       ? <FavouritesList/>
-      : <div>No Favourites</div>
+      : <div className={noFavourites}>No Favourites</div>
     }
     
   </menu>
@@ -19,7 +19,6 @@ const FavouritesMenu = ({ showMenu, onToggleMenu, hasFavourites }) => (
 
 const mapStateToProps = ({ favourites }) => {
   const hasFavourites = favourites[0] === undefined ? false : true
-
   return({ hasFavourites })
 }
 

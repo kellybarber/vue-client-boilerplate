@@ -7,7 +7,6 @@
   flex-direction: column;
 
   height: 100%;
-  width: 55rem;
   z-index: 150;
 
   padding: 1rem 1rem 2rem 4rem;
@@ -51,6 +50,15 @@
 
 .menuHideButton:active {
   transform: scale(1.02);
+}
+
+.noFavourites {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 200;
+
+  width: 46rem;
+  padding: 2rem 4rem 0 0;
 }
 
 @keyframes slideIn {
