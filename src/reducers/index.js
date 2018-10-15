@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux'
-import repos from './repos'
-import favourites from './favourites'
+
+import example from './example'
 
 export default combineReducers({
-  repos,
-  favourites
+  example
 })

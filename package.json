@@ -1,7 +1,7 @@
 {
-  "name": "github-favourites",
+  "name": "react-client-boilerplate",
   "version": "1.0.0",
-  "description": "A simple github api application for Shopify",
+  "description": "A simple react client boilerplate",
   "main": "index.js",
   "scripts": {
     "dev-server": "webpack-dev-server --config config/webpack.dev.js --hot",
