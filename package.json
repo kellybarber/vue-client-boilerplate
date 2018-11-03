@@ -1,7 +1,7 @@
 {
-  "name": "react-client-boilerplate",
+  "name": "vue-client-boilerplate",
   "version": "1.0.0",
-  "description": "A simple react client boilerplate",
+  "description": "A simple vue client boilerplate",
   "main": "index.js",
   "scripts": {
     "dev-server": "webpack-dev-server --config config/webpack.dev.js --hot",
@@ -34,6 +34,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",
     "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",

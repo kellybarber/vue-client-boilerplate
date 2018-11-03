@@ -1,4 +1,4 @@
-const VueLoaderPlugin = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
@@ -38,5 +38,5 @@ module.exports = {
       { root: path.resolve(__dirname, '..') }
     )
   ],
-  resolve: { extensions: [ '*', '.js', '.css', '.scss' ] },
+  resolve: { extensions: [ '*', '.js', '.vue', '.css', '.scss' ] },
 }
