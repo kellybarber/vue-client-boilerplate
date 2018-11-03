@@ -9,23 +9,17 @@ module.exports = merge(base, {
   devtool: 'source-map',
   module: {
     rules: [
-      { 
-        use: [ 
-          { loader: MiniCssExtractPlugin.loader }, 
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-              localIdentName: "[local]___[hash:base64:5]"
-            }
-          }
-        ], 
-        test: /\.css$/ 
+      {
+        use: [
+          MiniCssExtractPlugin.loader,
+          'vue-style-loader',
+          'css-loader'
+        ],
+        test: /\.css$/
       }
     ]
   },
-  plugins: [ 
+  plugins: [
     new OptimizeCssAssetsPlugin(),
     new MiniCssExtractPlugin({
       filename: 'style.css'
